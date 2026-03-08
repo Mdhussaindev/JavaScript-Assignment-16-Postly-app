@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background"></div>
+
+  <div class="container">
+
+    <!-- LOGIN FORM -->
+    <div class="form active" id="loginForm">
+      <h2>Login</h2>
+      <div class="input-group">
+        <input type="text" id="loginName" placeholder="Username">
+      </div>
+      <div class="input-group">
+        <input type="password" id="loginPassword" placeholder="Password">
+      </div>
+      <button id="loginBtn">Login</button>
+      <div class="switch">
+        Don't have an account? <span id="showSignup">Sign Up</span>
+      </div>
+    </div>
+
+    <!-- SIGNUP FORM -->
+    <div class="form" id="signupForm">
+      <h2>Sign Up</h2>
+      <div class="input-group">
+        <input type="text" id="signupName" placeholder="Username">
+      </div>
+      <div class="input-group">
+        <input type="password" id="signupPassword" placeholder="Password">
+      </div>
+      <button id="signupBtn">Create Account</button>
+      <div class="switch">
+        Already have an account? <span id="showLogin">Login</span>
+      </div>
+    </div>
+
+    <div class="form" id="postsPage">
+      <h2>Welcome, <span id="userWelcome"></span></h2>
+      <div class="input-group">
+        <input type="text" id="postTitle" placeholder="Post Title">
+      </div>
+      <div class="input-group">
+        <textarea id="postContent" placeholder="Post Content"></textarea>
+      </div>
+      <button id="addPostBtn">Add Post</button>
+      <button id="logoutBtn" style="margin-top:10px;background:#f44336;">Logout</button>
+
+      <h3 style="margin-top:20px;">Your Posts</h3>
+      <div id="postsList"></div>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="app.js"></script>
+</body>
+</html>
