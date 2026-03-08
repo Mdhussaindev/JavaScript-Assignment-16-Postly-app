@@ -1,4 +1,4 @@
-// Elements
+
 let loginForm = document.getElementById("loginForm")
 let signupForm = document.getElementById("signupForm")
 let postsPage = document.getElementById("postsPage")
@@ -20,19 +20,19 @@ let postContent = document.getElementById("postContent")
 let postsList = document.getElementById("postsList")
 let userWelcome = document.getElementById("userWelcome")
 
-// Data
+
 let users = JSON.parse(localStorage.getItem("users")) || []
 let posts = JSON.parse(localStorage.getItem("posts")) || []
 
-// Toggle forms
+
 showSignup.addEventListener("click", ()=>{loginForm.classList.remove("active");signupForm.classList.add("active")})
 showLogin.addEventListener("click", ()=>{signupForm.classList.remove("active");loginForm.classList.add("active")})
 
-// Helpers
+
 function userExists(name){return users.some(user => user.name===name)}
 function getLoggedInUser(){return JSON.parse(localStorage.getItem("loggedInUser"))}
 
-// Signup
+
 signupBtn.addEventListener("click", ()=>{
   let name = signupName.value.trim()
   let password = signupPassword.value.trim()
@@ -45,7 +45,7 @@ signupBtn.addEventListener("click", ()=>{
   signupForm.classList.remove("active");loginForm.classList.add("active")
 })
 
-// Login
+
 loginBtn.addEventListener("click", ()=>{
   let name = loginName.value.trim()
   let password = loginPassword.value.trim()
@@ -55,14 +55,14 @@ loginBtn.addEventListener("click", ()=>{
   Swal.fire({icon:"success",title:"Login successful",timer:1200,showConfirmButton:false}).then(()=>showPostsPage())
 })
 
-// Logout
+
 logoutBtn.addEventListener("click", ()=>{
   localStorage.removeItem("loggedInUser")
   postsPage.classList.remove("active")
   loginForm.classList.add("active")
 })
 
-// Show Posts Page
+
 function showPostsPage(){
   let user=getLoggedInUser()
   if(!user) return
@@ -71,7 +71,7 @@ function showPostsPage(){
   renderPosts()
 }
 
-// Add Post
+
 addPostBtn.addEventListener("click", ()=>{
   let title=postTitle.value.trim(), content=postContent.value.trim(), user=getLoggedInUser()
   if(!title||!content){Swal.fire({icon:"warning",title:"Both fields required"});return}
@@ -82,7 +82,7 @@ addPostBtn.addEventListener("click", ()=>{
   renderPosts()
 })
 
-// Render Posts
+
 function renderPosts(){
   let user=getLoggedInUser()
   postsList.innerHTML=""
@@ -110,5 +110,4 @@ function renderPosts(){
   })
 }
 
-// Auto show posts if already logged in
 if(getLoggedInUser()) showPostsPage()
