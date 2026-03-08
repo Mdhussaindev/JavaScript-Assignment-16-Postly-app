@@ -55,13 +55,11 @@ body{
   transform: translateY(-2px);
 }
 
-/* Forms */
 .container h2{
   text-align:center;
   margin-bottom:20px;
 }
 
-/* Form headings hover effect */
 .form h2{
   text-align:center;
   margin-bottom:20px;
@@ -71,12 +69,11 @@ body{
   font-size: 35px;
 }
 
-/* On hover: background + text color change */
 .form h2:hover{
-  background: rgba(102,126,234,0.2); /* light bluish overlay */
-  color: #4c6ef5; /* text color changes to blue */
+  background: rgba(102,126,234,0.2); 
+  color: #4c6ef5; 
   cursor: pointer;
-  transform: scale(1.05); /* slight zoom effect */
+  transform: scale(1.05); 
 }
 .input-group{
   margin-bottom:15px;
@@ -125,7 +122,6 @@ button:hover{
   box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* Switch */
 .switch{
   text-align:center;
   margin-top:15px;
@@ -143,7 +139,6 @@ button:hover{
   text-decoration: underline;
 }
 
-/* Forms toggle */
 .form{
   display:none;
 }
@@ -156,7 +151,6 @@ button:hover{
   z-index:9999 !important;
 }
 
-/* Posts */
 .post-card{
   border:1px solid #ccc;
   padding:15px;
