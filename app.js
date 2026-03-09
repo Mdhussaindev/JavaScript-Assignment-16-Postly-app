@@ -40,7 +40,14 @@ signupBtn.addEventListener("click", ()=>{
   if(userExists(name)){Swal.fire({icon:"error",title:"User already exists"});return}
   users.push({name,password})
   localStorage.setItem("users",JSON.stringify(users))
-  Swal.fire({icon:"success",title:"Account created",timer:1500,showConfirmButton:false})
+  Swal.fire({
+  icon:"success",
+  title:"Account created successfully",
+  timer:1500,
+  showConfirmButton:false
+}).then(()=>{
+  window.location.href = "https://mdhussaindev.github.io/JavaScript-Assignment-15/"
+})
   signupName.value="";signupPassword.value=""
   signupForm.classList.remove("active");loginForm.classList.add("active")
 })
